@@ -1,2 +1,2 @@
 # NL-Optimisation
-#Code for nolinear optimisation
+#FORTRAN code for nolinear optimisation
