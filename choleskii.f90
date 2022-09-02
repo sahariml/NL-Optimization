@@ -12,23 +12,10 @@ read (10,*)A(i,:)
 enddo
 print *,"la matrice A:"
 write (*,fmt='(3F10.5)'),A
-!write(*,*)A
-!write(20,*)A
 call cholesky(A,L,n)
 print *,"la matrice L:"
 write (*,fmt='(3F10.5)'),L
 write (20,fmt='(3F10.5)'),L
-!!!!!!!!!!!!!!!!!!!!!!!!
-!do i=1,n
-!	L(i,i)=sqrt(A(i,i)-somme(L(i,:)*L(i,:),i-1))
-!	do j=i+1,n
-!		L(j,i)=(A(i,j)-somme(L(i,:)*L(j,:),i-1))/(L(i,i))
-!	enddo
-!enddo
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!write (*,fmt='(4F8.5)'),L
-!write (20,*),"LLLLLLLLLLLLLLLLLLLLL"
-!write (20,*),L
  close(20)
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !call cpu_time(tdebut)
@@ -37,7 +24,6 @@ subroutine cholesky(B,L,m)
 real, dimension(n,n):: B,L
 integer :: i,j,m
 !!!!!!!!!!!!!!!!!!!!!!!!
-!write (*,fmt='(4F8.5)'),B
 do i=1,m
 	L(i,i)=sqrt(B(i,i)-somme(L(i,:)*L(i,:),i-1))
 	do j=i+1,m
