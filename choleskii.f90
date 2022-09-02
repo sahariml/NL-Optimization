@@ -41,7 +41,6 @@ if (m<1) then
 	somme=0.0
 else
 	do i=1,m
-!print *,"vi",V(i),somme
 		somme=somme+V(i)
 	enddo
 endif
